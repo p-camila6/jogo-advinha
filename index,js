@@ -1,0 +1,23 @@
+const numeroPensado = Number(prompt('Pense em um número aleatório e digite-o'));
+let chuteNumero;
+let tentativas = 0;
+
+function gameNumeros(numeroPensado, chuteNumero) {
+    while (numeroPensado !== chuteNumero) {
+        chuteNumero = Number(prompt('Tente advinhar o número que seu amigo pensou'));
+        tentativas++;
+
+        if (numeroPensado > chuteNumero) {
+            console.log(`O número chutado foi: ${chuteNumero}`);
+            console.log('Errrrrrrrou, é maior');
+        } else if (numeroPensado < chuteNumero) {
+            console.log(`O número chutado foi: ${chuteNumero}`);
+            console.log('Errrrrrrrou, é menor');
+        }
+    }
+
+    console.log(`Parabéns! Acertou em cheio.`);
+    console.log(`O número de tentativas foi: ${tentativas}`);
+}
+
+gameNumeros(numeroPensado, chuteNumero)
